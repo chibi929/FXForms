@@ -1574,6 +1574,8 @@ static void FXFormPreprocessFieldDictionary(NSMutableDictionary *dictionary)
     else
     {
         [collection addObjectsFromArray:self.values];
+        // remove NSNull. because crash in 'setValue' on Swift application.
+        [collection removeObjectIdenticalTo:[NSNull null]];
     }
     
     //set field value
