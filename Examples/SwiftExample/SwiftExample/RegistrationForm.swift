@@ -27,6 +27,8 @@ class RegistrationForm: NSObject, FXForm {
     var otherInterests = 0
     var about: String?
     
+    var inlineArray: [String]?
+    
     var plan: Int = 0
     
     var notifications: String?
@@ -110,6 +112,9 @@ class RegistrationForm: NSObject, FXForm {
             //this is a multiline text view that grows to fit its contents
             
             [FXFormFieldKey: "about", FXFormFieldType: FXFormFieldTypeLongText],
+            
+            // this is a inline array
+            [FXFormFieldKey: "inlineArray", FXFormFieldInline: true, FXFormFieldHeader: "Inline Array"],
             
             //this is an options field that uses a FXFormOptionSegmentsCell to display the available
             //options in a UIPickerView
